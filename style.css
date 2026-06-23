@@ -102,10 +102,13 @@ h2 {
 
 #hero h1 {
   font-size: clamp(3rem, 8vw, 5.5rem);
-  font-weight: 800;
+  font-weight: 900;
   line-height: 1.05;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
   margin-bottom: 0.75rem;
+  text-shadow:
+    4px 4px 0 rgba(212, 160, 23, 0.3),
+    8px 8px 0 rgba(0, 0, 0, 0.4);
 }
 
 .hero-tagline {
