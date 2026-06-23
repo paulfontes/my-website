@@ -9,7 +9,10 @@
 <body>
 
   <nav>
-    <span class="nav-name">PF</span>
+    <div class="nav-left">
+      <button id="theme-toggle" aria-label="Toggle color theme">&#9788;</button>
+      <span class="nav-name">PF</span>
+    </div>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -136,6 +139,23 @@
     <a href="#hero" class="back-to-top" aria-label="Back to top">&#8593;</a>
     <p>&copy; 2026 Paul Fontes &mdash; Built with Claude Code</p>
   </footer>
+
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    if (localStorage.getItem('theme') === 'light') {
+      html.classList.add('light');
+      toggle.textContent = '☽';
+    }
+
+    toggle.addEventListener('click', () => {
+      html.classList.toggle('light');
+      const isLight = html.classList.contains('light');
+      toggle.textContent = isLight ? '☽' : '☀';
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+  </script>
 
 </body>
 </html>

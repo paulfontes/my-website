@@ -12,6 +12,23 @@
   --section-gap: 7rem;
 }
 
+/* ── Light theme ── */
+html.light {
+  --bg:          #f5f0e8;
+  --surface:     #ffffff;
+  --border:      #ddd5c0;
+  --accent:      #b8880f;
+  --accent-dim:  #b8880f22;
+  --text:        #1a1a1a;
+  --text-muted:  #666;
+}
+
+html.light #hero h1 {
+  text-shadow:
+    4px 4px 0 rgba(184, 136, 15, 0.2),
+    8px 8px 0 rgba(184, 136, 15, 0.08);
+}
+
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -37,6 +54,32 @@ nav {
   padding: 1.1rem 2rem;
   background-color: var(--bg);
   border-bottom: 1px solid var(--border);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+#theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+#theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .nav-name {
